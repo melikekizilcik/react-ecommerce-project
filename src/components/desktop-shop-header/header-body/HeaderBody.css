@@ -1,0 +1,51 @@
+.header-body{
+    background: rgb(150,233,251);
+    background: linear-gradient(90deg, rgba(150,233,251,1) 35%, rgba(171,236,214,1) 100%);
+    /* width: 800px; */
+    height: 450px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1292px;
+    padding-left: 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 50px;
+}
+
+.header-body-title{
+    margin: 110px 100px 0px;
+}
+
+.title-season{
+    color: var(--hover-text-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.title-collection{
+    color: var(--text-color);
+    font-weight: bolder; 
+    margin-top: 25px;
+}
+
+.title-description{
+    color: var(--secondary-text-color);
+    font-weight: 600;
+    margin-top: -8px;
+}
+
+.header-body > button {
+    margin-left: 100px;
+    background-color: #23A6F0;
+    padding-inline: 40px;
+    color: white;
+    font-weight: 700;letter-spacing: 0.1px;
+    font-family: "montserrat", sans-serif;
+    border-color: var(--primary-blue);
+    border-radius: 10px;
+    margin-top: 15px;
+}

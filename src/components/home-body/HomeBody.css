@@ -1,0 +1,43 @@
+.title{
+    margin-top: 100px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    text-align: center;
+    column-gap: -20px;
+}
+
+.title > h4{
+    color: var(--secondary-text-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.title > h2{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.title > h5{
+    color: var(--second-text-color);
+    margin-bottom: 50px;
+}
+
+.button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-div > button{
+    background-color: white;
+    color: var(--primary-blue);
+    border-radius: 5px;
+    border-color: var(--primary-blue);
+    padding: 15px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+}

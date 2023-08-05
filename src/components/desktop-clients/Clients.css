@@ -1,0 +1,10 @@
+.clients{
+    margin-top: 650px;
+    display: flex;
+    justify-content: center;  
+}
+
+.clients > img:not(:last-of-type){
+    margin-right: 60px;
+    height: 50px;
+}
