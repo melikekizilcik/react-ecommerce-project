@@ -1,5 +1,11 @@
+.button{
+    background-color: white;
+    border-color: white;
+    cursor: pointer;
+}
+
 .product-item{
-    margin: 30px;
+    margin: 100px;
     flex-direction: column;
     text-align: center;
 }
@@ -38,4 +44,9 @@
     font-weight: 700;
     line-height: 24px; /* 150% */
     letter-spacing: 0.1px;
+}
+
+.product-item > img{
+    max-height: 300px;
+    max-width: 400px;
 }

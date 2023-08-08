@@ -38,6 +38,6 @@
     border-color: var(--primary-blue);
     padding: 15px;
     font-size: 14px;
-    font-style: normal;
+    font-style: "montserrat", sans-serif;
     font-weight: 700;
 }

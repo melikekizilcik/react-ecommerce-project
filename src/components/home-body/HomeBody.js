@@ -4,8 +4,8 @@ import React from "react";
 import "./HomeBody.css";
 
 //import components
-import ProductCardItem from "./ProductCards/ProductCardItem";
 import { useNavigate } from "react-router-dom";
+import ProductCardList from "./ProductCards/ProductCardList";
 
 const HomeBody = () => {
   const navigate = useNavigate();
@@ -16,9 +16,11 @@ const HomeBody = () => {
         <h2>BESTSELLER PRODUCTS</h2>
         <h5>Problems trying to resolve the conflict between</h5>
       </div>
-      <ProductCardItem />
+      <ProductCardList />
       <div className="button-div">
-        <button onClick={() => navigate("/shop")}>LOAD MORE PRODUCTS</button>
+        <button onClick={() => navigate("/products")}>
+          LOAD MORE PRODUCTS
+        </button>
       </div>
     </>
   );

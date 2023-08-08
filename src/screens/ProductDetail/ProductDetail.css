@@ -1,0 +1,30 @@
+.product-container{
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+}
+
+.product-container > img{
+    margin-right: 50px;
+    width: 600px;
+    height: 700px;
+}
+
+.product-detail > h3{
+    font-size: 24px;
+}
+
+.product-detail > p{
+    font-size: 24px;
+}
+
+.product-detail > button{
+    cursor: pointer;
+    background-color: var(--primary-blue);
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border-color: var(--primary-blue) ;
+    border-radius: 10px;
+}
+

@@ -4,18 +4,23 @@ import React from "react";
 import "./ProductCardItem.css";
 
 //import components
-import ProductCover from "../../../assets/product-cover.png";
+import { useNavigate, useParams } from "react-router-dom";
 
-const ProductCardItem = () => {
+const ProductCardItem = ({ product }) => {
+  const navigate = useNavigate();
+  const { productId } = useParams();
+
   return (
-    <div className="product-item">
-      <img src={ProductCover} alt="" />
-      <div className="container">
-        <h5 className="product-title">Title</h5>
-        <h5 className="product-category">Category</h5>
-        <h5 className="product-price">Price</h5>
+    <button className="button" onClick={() => navigate("/productDetail")}>
+      <div className="product-item">
+        <img src={product.image} alt="" />
+        <div className="container">
+          <h5 className="product-title">{product.title}</h5>
+          <h5 className="product-category">{product.category}</h5>
+          <h5 className="product-price">{product.price}$</h5>
+        </div>
       </div>
-    </div>
+    </button>
   );
 };
 

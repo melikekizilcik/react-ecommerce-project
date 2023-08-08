@@ -10,6 +10,7 @@ import Blog from "./screens/Blog/Blog";
 import Contact from "./screens/Contact/Contact";
 import Pages from "./screens/Pages/Pages";
 import Shop from "./screens/Shop/Shop";
+import ProductDetail from "./screens/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/pages" element={<Pages />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/products" element={<Shop />} />
+        <Route path="/productDetail" element={<ProductDetail />} />
       </Routes>
     </div>
   );
