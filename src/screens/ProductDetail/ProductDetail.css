@@ -6,8 +6,8 @@
 
 .product-container > img{
     margin-right: 50px;
-    width: 600px;
-    height: 700px;
+    max-width: 500px;
+    max-height: 500px;
 }
 
 .product-detail > h3{
@@ -24,7 +24,7 @@
     color: white;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
-    border-color: var(--primary-blue) ;
+    border-color:1px solid var(--primary-blue) ;
     border-radius: 10px;
 }
 

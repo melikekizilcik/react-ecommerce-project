@@ -4,10 +4,11 @@ import React from "react";
 import "./Navbar.css";
 
 //import components
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { SlBasket } from "react-icons/sl";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="header">
       <h3 className="header-title">Bandage</h3>
@@ -19,7 +20,7 @@ const Navbar = () => {
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/pages">Pages</NavLink>
       </nav>
-      <SlBasket className="item-basket" />
+      <SlBasket className="item-basket" onClick={() => navigate("/chart")} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 //import components
 import DesktopShopHeader from "../../components/desktop-shop-header/DesktopShopHeader";
-import Clients from "../../components/desktop-clients/Clients";
+import Clients from "../../components/Clients/Clients";
 
 //import styles
 import "./Home.css";

@@ -1,8 +1,8 @@
 import React from "react";
 
 //import components
-import Navbar from "./navbar/Navbar";
-import HeaderBody from "./header-body/HeaderBody";
+import Navbar from "../navbar/Navbar";
+import HeaderBody from "../desktop-shop-header/header-body/HeaderBody";
 
 //import style
 import "./DesktopShopHeader.css";

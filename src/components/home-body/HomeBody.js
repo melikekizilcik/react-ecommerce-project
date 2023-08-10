@@ -5,7 +5,7 @@ import "./HomeBody.css";
 
 //import components
 import { useNavigate } from "react-router-dom";
-import ProductCardList from "./ProductCards/ProductCardList";
+import ProductCardList from "../ProductCards/ProductCardList";
 
 const HomeBody = () => {
   const navigate = useNavigate();
