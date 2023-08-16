@@ -1,65 +1,58 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import Navbar from "../../components/navbar/Navbar";
 
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import {
-  addShoppingCart,
-  calculateTotalPrice,
-} from "../../store/reducers/ProductReducer";
+import { fetchProduct } from "../../api/getProducts";
+
+import { addShoppingCart } from "../../store/reducers/ProductReducer";
 
 import "./ProductDetail.css";
 
 const ProductDetail = () => {
-  const dispatch = useDispatch();
-  const { id } = useParams();
-  const [product, setProduct] = useState({});
-  const [title, setTitle] = useState();
-  const [price, setPrice] = useState();
-  const [image, setImage] = useState();
+	// useState
+	const [product, setProduct] = useState({});
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const response = await axios.get(
-        `https://fakestoreapi.com/products/${id}`
-      );
-      setProduct(response.data);
-      setTitle(response.data.title);
-      setPrice(response.data.price);
-      setImage(response.data.image);
-      console.log(response.data);
-    };
-    fetchProduct();
-  }, []);
+	// Variables
+	const dispatch = useDispatch();
+	const { id } = useParams();
 
-  const addToCart = () => {
-    dispatch(
-      addShoppingCart({
-        id: id,
-        title: title,
-        price: price,
-        image: image,
-        quantity: 1,
-      })
-    );
-    dispatch(calculateTotalPrice());
-  };
+	// useEffect
+	useEffect(() => {
+		const getProductDetail = async () => {
+			const product = await fetchProduct(id);
+			setProduct(product);
+		};
 
-  return (
-    <>
-      <Navbar />
-      <div className="product-container">
-        <img src={image} alt="" />
-        <div className="product-detail">
-          <h3>{title}</h3>
-          <p>{price} $</p>
-          <button onClick={addToCart}>Add to cart</button>
-        </div>
-      </div>
-    </>
-  );
+		getProductDetail();
+	}, [id]);
+
+	const addToCart = () => {
+		dispatch(
+			addShoppingCart({
+				id: product.id,
+				title: product.title,
+				price: product.price,
+				image: product.image,
+				quantity: 1,
+			})
+		);
+	};
+
+	return (
+		<>
+			<Navbar />
+			<div className="product-container">
+				<img src={product.image} alt="" />
+				<div className="product-detail">
+					<h3>{product.title}</h3>
+					<p>{product.price} $</p>
+					<button onClick={addToCart}>Add to cart</button>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default ProductDetail;

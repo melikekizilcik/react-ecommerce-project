@@ -1,50 +1,57 @@
-.header{
-    display: flex;
-    align-items: center;
-    /*justify-content: space-between; */
-    margin-right: 40px;
-    margin-left: 40px;
+.header {
+	display: flex;
+	align-items: center;
+	/*justify-content: space-between; */
+	margin-right: 40px;
+	margin-left: 40px;
 }
 
-.header-title{
-    font-weight: bold;
-    font-size: 24px;
-    font-weight: 700;
-    margin-right: 40px;
+.header-title {
+	font-weight: bold;
+	font-size: 24px;
+	font-weight: 700;
+	margin-right: 40px;
 }
 
-.header-navbar{
-
+.header-navbar {
 }
 
-.header-navbar a{
-    margin-right: 30px;
-    text-decoration: none;
+.header-navbar a {
+	margin-right: 30px;
+	text-decoration: none;
 }
 
-.header-navbar a:active{
-    margin-right: 30px;
-    color: rgb(189, 189, 189);
-    
+.header-navbar a:active {
+	margin-right: 30px;
+	color: rgb(189, 189, 189);
 }
 
-.basket{
-    display: flex;
-    gap: 3px;
-    margin-left: auto;
+.basket {
+	display: flex;
+	margin-left: auto;
+	position: relative;
 }
 
-.item-basket{
-    font-size: 20px;
-    justify-self: flex-end;
-    cursor: pointer;
-    
+.item-basket {
+	font-size: 20px;
+	justify-self: flex-end;
+	cursor: pointer;
+	z-index: -1;
 }
 
-.items-quantity{
-    color: black;
-    width: 20px;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 18px;
+.items-quantity {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: white;
+	width: 11px;
+	height: 11px;
+	background-color: blueviolet;
+	text-align: center;
+	z-index: 9999;
+	border-radius: 50%;
+	font-size: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
