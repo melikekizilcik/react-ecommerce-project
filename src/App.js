@@ -11,7 +11,7 @@ import Contact from "./screens/Contact/Contact";
 import Pages from "./screens/Pages/Pages";
 import Shop from "./screens/Shop/Shop";
 import ProductDetail from "./screens/ProductDetail/ProductDetail";
-import Chart from "./screens/Chart/Chart";
+import Cart from "./screens/Cart/Cart";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <Route path="/pages" element={<Pages />} />
         <Route path="/products" element={<Shop />} />
         <Route path="/product-details/:id" element={<ProductDetail />} />
-        <Route path="/chart" element={<Chart />} />
+        <Route path="/chart" element={<Cart />} />
       </Routes>
     </div>
   );

@@ -1,13 +1,12 @@
 import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
-import {
-  clearCart,
-  calculateTotalPrice,
-} from "../../store/reducers/ProductReducer";
+import { clearCart } from "../../store/reducers/ProductReducer";
 import Navbar from "../../components/navbar/Navbar";
+import "./Cart.css";
+import CartCard from "./CartCard";
 
-const Chart = () => {
+const Cart = () => {
   const products = useSelector((state) => state.products.shoppingCart);
   const total = useSelector((state) => state.products.totalPrice);
   const dispatch = useDispatch();
@@ -15,17 +14,14 @@ const Chart = () => {
     <div>
       <Navbar />
       {products?.map((item, index) => (
-        <div key={index}>
-          <div>{item.id}</div>
-          <div>{item.title}</div>
-          <div>{item.price}</div>
-          <div>{item.image}</div>
-        </div>
+        <CartCard key={index} product={item} />
       ))}
-      <p>{total}</p>
-      <button onClick={() => dispatch(clearCart())}>Clear cart</button>
+      <div className="total-price">
+        <p>Total price: {total} $</p>
+        <button onClick={() => dispatch(clearCart())}>Clear cart</button>
+      </div>
     </div>
   );
 };
 
-export default Chart;
+export default Cart;

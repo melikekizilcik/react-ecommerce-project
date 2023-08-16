@@ -36,8 +36,10 @@
     color: var(--primary-blue);
     border-radius: 5px;
     border-color: 1px solid var(--primary-blue);
+    border-style: none;
     padding: 15px;
     font-size: 14px;
     font-style: "montserrat", sans-serif;
     font-weight: 700;
+    cursor: pointer;
 }

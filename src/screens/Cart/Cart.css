@@ -1,0 +1,18 @@
+.total-price > button{
+    background-color: var(--primary-blue);
+    color: white;
+    height: 30px;
+    border-radius: 5px;
+    border-color: 1px solid var(--primary-blue);
+    border-style: none;
+    cursor: pointer;
+}
+
+
+.total-price{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}

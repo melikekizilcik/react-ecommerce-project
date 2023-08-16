@@ -1,17 +1,21 @@
 .header{
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    /*justify-content: space-between; */
+    margin-right: 40px;
+    margin-left: 40px;
 }
 
 .header-title{
     font-weight: bold;
     font-size: 24px;
     font-weight: 700;
-    margin-right: 30px;
+    margin-right: 40px;
 }
 
-.header-navbar{}
+.header-navbar{
+
+}
 
 .header-navbar a{
     margin-right: 30px;
@@ -24,6 +28,23 @@
     
 }
 
+.basket{
+    display: flex;
+    gap: 3px;
+    margin-left: auto;
+}
+
 .item-basket{
+    font-size: 20px;
     justify-self: flex-end;
+    cursor: pointer;
+    
+}
+
+.items-quantity{
+    color: black;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
 }

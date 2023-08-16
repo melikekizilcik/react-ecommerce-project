@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   shoppingCart: [],
   totalPrice: 0,
-  quantity: 1,
+  productQuantity: 1,
 };
 
 export const productSlice = createSlice({
@@ -15,6 +15,7 @@ export const productSlice = createSlice({
     },
     clearCart: (state) => {
       state.shoppingCart = [];
+      state.totalPrice = 0;
     },
     calculateTotalPrice: (state) => {
       let total = 0;
@@ -23,9 +24,24 @@ export const productSlice = createSlice({
       });
       state.totalPrice = total;
     },
+    increaseQuantity: (state) => {
+      state.shoppingCart.forEach((item) => {
+        item.quantity += 1;
+      });
+    },
+    decreaseQuantity: (state) => {
+      state.shoppingCart.forEach((item) => {
+        item.quantity -= 1;
+      });
+    },
   },
 });
 
-export const { addShoppingCart, clearCart, calculateTotalPrice } =
-  productSlice.actions;
+export const {
+  addShoppingCart,
+  clearCart,
+  calculateTotalPrice,
+  increaseQuantity,
+  decreaseQuantity,
+} = productSlice.actions;
 export default productSlice.reducer;

@@ -7,7 +7,12 @@ import "./Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { SlBasket } from "react-icons/sl";
 
+//import redux
+import { useSelector } from "react-redux";
+
 const Navbar = () => {
+  const shoppingCart = useSelector((state) => state.products.shoppingCart);
+
   const navigate = useNavigate();
   return (
     <div className="header">
@@ -20,7 +25,10 @@ const Navbar = () => {
         <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/pages">Pages</NavLink>
       </nav>
-      <SlBasket className="item-basket" onClick={() => navigate("/chart")} />
+      <div className="basket">
+        <SlBasket className="item-basket" onClick={() => navigate("/chart")} />
+        <div className="items-quantity">{shoppingCart?.length}</div>
+      </div>
     </div>
   );
 };
