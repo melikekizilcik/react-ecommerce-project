@@ -10,62 +10,73 @@ import { getUsers } from "../../api/getUsers";
 import "./UserCardList.css";
 
 const UserCardList = () => {
-  //useState
-  const [users, setUsers] = useState([]);
-  const [sortedUsers, setSortedUsers] = useState([]);
-  const [query, setQuery] = useState("");
+	//useState
+	const [users, setUsers] = useState([]);
+	const [query, setQuery] = useState({ search: "", sort: null });
 
-  //variables
-  const filteredUsers = users.filter((user) => {
-    return (
-      user.firstName.toLowerCase().includes(query.toLowerCase()) ||
-      user.lastName.toLowerCase().includes(query.toLowerCase())
-    );
-  });
+	// Variables
+	const getData = () => {
+		let data = [...users];
 
-  //function
-  const sortUsers = () => {
-    setSortedUsers(
-      users.sort(function (a, b) {
-        if (a.firstName < b.firstName) {
-          return -1;
-        }
-        if (a.firstName > b.firstName) {
-          return 1;
-        }
-        return 0;
-      })
-    );
-  };
+		data = data.filter(user => {
+			return (
+				user.firstName.toLocaleLowerCase().includes(query.search.toLocaleLowerCase()) ||
+				user.lastName.toLocaleLowerCase().includes(query.search.toLocaleLowerCase())
+			);
+		});
 
-  //useEffect
-  useEffect(() => {
-    const fetchUsersList = async () => {
-      const userList = await getUsers();
-      setUsers(userList);
-    };
-    fetchUsersList();
-    console.log(users);
-  }, []);
+		if (query.sort === "ASC") {
+			data = data.sort((a, b) => a.firstName.localeCompare(b.firstName));
+		}
 
-  return (
-    <>
-      <div className="search">
-        <input
-          className="search-input"
-          placeholder="Search..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button onClick={sortUsers}>A - Z</button>
-      </div>
-      <div className="user-list">
-        {filteredUsers?.map((item, index) => {
-          return <UserCard key={index} user={item} />;
-        })}
-      </div>
-    </>
-  );
+		if (query.sort === "DESC") {
+			data = data.sort((a, b) => b.firstName.localeCompare(a.firstName));
+		}
+
+		return data;
+	};
+
+	const changeSort = () => {
+		if (query.sort === null) {
+			setQuery(prev => ({ ...prev, sort: "ASC" }));
+		}
+
+		if (query.sort === "ASC") {
+			setQuery(prev => ({ ...prev, sort: "DESC" }));
+		}
+
+		if (query.sort === "DESC") {
+			setQuery(prev => ({ ...prev, sort: null }));
+		}
+	};
+
+	//useEffect
+	useEffect(() => {
+		const fetchUsersList = async () => {
+			const userList = await getUsers();
+			setUsers(userList);
+		};
+		fetchUsersList();
+	}, []);
+
+	return (
+		<>
+			<div className="search">
+				<input
+					className="search-input"
+					placeholder="Search..."
+					value={query.search}
+					onChange={e => setQuery({ ...query, search: e.target.value })}
+				/>
+				<button onClick={changeSort}>A - Z</button>
+			</div>
+			<div className="user-list">
+				{getData()?.map((item, index) => {
+					return <UserCard key={index} user={item} />;
+				})}
+			</div>
+		</>
+	);
 };
 
 export default UserCardList;
