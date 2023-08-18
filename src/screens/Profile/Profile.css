@@ -1,0 +1,47 @@
+h3{
+    text-align: center;
+}
+
+button{
+    display: flex;
+    background-color: var(--primary-blue);
+    color: white;
+    border-color: 1px solid var(--primary-blue);
+    padding: 10px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+input::placeholder{
+    color: black;
+    font-size: 15px;
+    font-family: "montserrat", sans-serif;
+}
+
+.user-profile{
+    display: flex;
+    box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    -webkit-box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    -moz-box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    width: fit-content;
+    padding: 40px;
+    margin: 50px;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.user-information{
+    padding: 50px;
+}
+
+.user-name-information, .user-age-information, .user-address, .email-password{
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+

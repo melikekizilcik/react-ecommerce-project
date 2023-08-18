@@ -12,6 +12,8 @@ import Pages from "./screens/Pages/Pages";
 import Shop from "./screens/Shop/Shop";
 import ProductDetail from "./screens/ProductDetail/ProductDetail";
 import Cart from "./screens/Cart/Cart";
+import Users from "./screens/Users/Users";
+import Profile from "./screens/Profile/Profile";
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
         <Route path="/pages" element={<Pages />} />
         <Route path="/products" element={<Shop />} />
         <Route path="/product-details/:id" element={<ProductDetail />} />
-        <Route path="/chart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );

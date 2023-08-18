@@ -1,0 +1,36 @@
+.user-list{
+    padding: 30px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+input{
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    -webkit-box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    -moz-box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    width: 550px;
+    
+}
+
+button{
+    font-family: "montserrat", sans-serif;;
+}
+
+.search-input::placeholder{
+    font-size: 15px;
+    font-family: "montserrat", sans-serif;;
+}

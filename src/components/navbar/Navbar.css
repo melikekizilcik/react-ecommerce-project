@@ -26,6 +26,19 @@
 	color: rgb(189, 189, 189);
 }
 
+.icons{
+	display: flex;
+	
+	justify-content: flex-end;
+	gap: 20px;
+}
+
+.profile-icon{
+	font-size: 25px;
+	cursor: pointer;
+	justify-self: flex-end; 
+}
+
 .basket {
 	display: flex;
 	margin-left: auto;
@@ -33,7 +46,7 @@
 }
 
 .item-basket {
-	font-size: 20px;
+	font-size: 25px;
 	justify-self: flex-end;
 	cursor: pointer;
 	z-index: -1;
@@ -44,14 +57,16 @@
 	top: 0;
 	right: 0;
 	color: white;
-	width: 11px;
-	height: 11px;
-	background-color: blueviolet;
+	width: 14px;
+	height: 14px;
+	background-color: var(--primary-blue);
 	text-align: center;
 	z-index: 9999;
 	border-radius: 50%;
-	font-size: 8px;
+	font-size: 12px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+

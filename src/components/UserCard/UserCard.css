@@ -1,0 +1,28 @@
+.user-container{
+    background-color: #e8e8e8;
+    max-width: fit-content;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 30px;
+}
+
+.user-image{
+    width: 150px;
+}
+
+.user-info{
+    text-align: center;
+}
+
+.user-name{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.user-city{
+    font-size: 14px;
+}
+
+.user-phone{
+    font-size: 12px;
+}

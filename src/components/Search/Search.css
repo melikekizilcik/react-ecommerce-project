@@ -1,0 +1,21 @@
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    padding: 15px;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    -webkit-box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    -moz-box-shadow: 1px 2px 15px -3px rgba(0,0,0,0.19);
+    width: 550px;
+    
+}
+
+.search-input::placeholder{
+    font-size: 15px;
+    font-family: "montserrat", sans-serif;;
+}
