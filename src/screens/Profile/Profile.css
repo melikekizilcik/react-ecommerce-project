@@ -13,6 +13,17 @@ button{
     cursor: pointer;
 }
 
+.update-buttons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-button{
+    background-color: rgb(36, 167, 36);
+}
+
 input::placeholder{
     color: black;
     font-size: 15px;
