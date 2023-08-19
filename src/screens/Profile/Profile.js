@@ -9,6 +9,7 @@ import { getProfile } from "../../api/getProfile";
 //import packages
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 //import style
 import "./Profile.css";
@@ -34,7 +35,16 @@ const Profile = () => {
   };
 
   const handleEdit = () => {
-    setEdit(!edit);
+    setEdit(false);
+  };
+
+  const discardChanges = () => {
+    setEdit(true);
+    const fetchProfile = async () => {
+      const userProfile = await getProfile();
+      setProfile(userProfile);
+    };
+    fetchProfile();
   };
 
   const handleBirthday = (e) => {
@@ -82,13 +92,13 @@ const Profile = () => {
     <div>
       <Navbar />
       <h3>
-        {userFullName?.firstName} {userFullName?.lastName}'s Profile
+        {userFullName?.name} {userFullName?.lastName}'s Profile
       </h3>
       <div className="user-profile">
         <img src={profile?.image} alt="" />
         <div>
           <p>
-            Welcome {userFullName?.firstName} {userFullName?.lastName}
+            Welcome {userFullName?.name} {userFullName?.lastName}
           </p>
           <button onClick={() => navigate("/products")}>
             Keep shopping see all products
@@ -98,13 +108,17 @@ const Profile = () => {
       </div>
       <h3>User Information</h3>
       <div className="update-buttons">
-        <button onClick={handleEdit}>Update profile</button>
         {edit ? (
-          <div></div>
+          <button onClick={handleEdit}>Update profile</button>
         ) : (
-          <button onClick={sendUpdates} className="save-button">
-            Save changes
-          </button>
+          <div className="change-button">
+            <button onClick={sendUpdates} className="save-button">
+              Save changes
+            </button>
+            <button onClick={discardChanges} className="discard-button">
+              Discard changes
+            </button>
+          </div>
         )}
       </div>
       <div className="user-information">
@@ -185,13 +199,18 @@ const Profile = () => {
               onChange={(e) => formUpdate("password", e.target.value)}
             />
             <span
+              className="password-icons"
               onClick={() =>
                 setPasswordType(
                   passwordType === "password" ? "text" : "password"
                 )
               }
             >
-              {passwordType === "password" ? "Göster" : "Gizle"}
+              {passwordType === "password" ? (
+                <AiOutlineEye />
+              ) : (
+                <AiOutlineEyeInvisible />
+              )}
             </span>
           </div>
         </div>

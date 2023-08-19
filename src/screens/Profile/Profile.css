@@ -11,6 +11,8 @@ button{
     border-radius: 10px;
     border-style: none;
     cursor: pointer;
+    font-family: "montserrat", sans-serif;
+    margin-top: 10px;
 }
 
 .update-buttons{
@@ -18,10 +20,26 @@ button{
     gap: 20px;
     align-items: center;
     justify-content: center;
+    font-family: "montserrat", sans-serif;
+}
+
+.update-buttons > button{
+    font-family: "montserrat", sans-serif;
+}
+
+.change-button{
+    display: flex;
+    gap: 20px;
 }
 
 .save-button{
     background-color: rgb(36, 167, 36);
+    font-family: "montserrat", sans-serif;
+}
+
+.discard-button{
+    background-color: rgb(197, 21, 21);
+    font-family: "montserrat", sans-serif;
 }
 
 input::placeholder{
@@ -56,3 +74,8 @@ input::placeholder{
     margin-right: auto;
 }
 
+.password-icons{
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}

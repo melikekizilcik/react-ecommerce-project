@@ -26,8 +26,11 @@ input{
     
 }
 
-button{
-    font-family: "montserrat", sans-serif;;
+.sort-button{
+    display: block;
+    font-family: "montserrat", sans-serif;
+    width: 70px;
+    text-align: center;
 }
 
 .search-input::placeholder{

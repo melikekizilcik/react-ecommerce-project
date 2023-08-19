@@ -28,7 +28,7 @@
 
 .icons{
 	display: flex;
-	
+	margin-left: auto;
 	justify-content: flex-end;
 	gap: 20px;
 }
@@ -41,7 +41,6 @@
 
 .basket {
 	display: flex;
-	margin-left: auto;
 	position: relative;
 }
 
